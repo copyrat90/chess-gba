@@ -1,26 +1,29 @@
-# Butano template
+# Chess for GBA
 
-GBA gamedev template for [Butano engine](https://github.com/GValiente/butano).
+Simple chess game made with [Butano engine](https://github.com/GValiente/butano).
 
-This template is meant to be used on [VSCode](https://code.visualstudio.com/), with [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) & [Native Debug](https://marketplace.visualstudio.com/items?itemName=webfreak.debug) extensions.
-
-
-## Changing paths
-
-You need to change some paths in this template so that they suit your environment.
-1. Change `LIBBUTANO :=` on [Makefile](Makefile) to your location for Butano.
-2. Change `-I` lines on [compile_flags.txt](compile_flags.txt) to your location for Butano.
+Nothing to see for now, still working on it!
 
 
-## Setting up debugger
+## Dependencies
 
-[launch.json](launch.json) and [tasks.json](tasks.json) are provided to easily debug your game with [mGBA](https://mgba.io/).
+This program uses [Butano](https://github.com/GValiente/butano), which is licensed under the zlib license.
 
-1. Add `mgba` and `devkitARM/bin/arm-none-eabi-gdb` executables to your `PATH`.
-2. Install [Native Debug extension](https://marketplace.visualstudio.com/items?itemName=webfreak.debug) on VSCode.
-3. Settings done; Hit F5 on VSCode to debug.
 
-Optionally, add `-O0` to `USERFLAGS` on Makefile to improve debugging.\
-Don't forget to remove `-O0` before your actual release!
+## Build
 
-(Unfortunately, giving `-O0` sometimes prevents your game from launching.)
+> See my [Butano template README](https://github.com/copyrat90/butano-template/blob/main/README.md) for more detailed info about setting up dev environment.
+
+First, make sure the [Butano](https://github.com/GValiente/butano) is set up correctly, with its own dependencies.
+
+Next, change the path in `Makefile` which points to the directory where `butano.mak` is located,
+from `LIBBUTANO   :=  C:/Libs/butano/butano` to your own path.
+
+That should do it, now do `make -j16` and see what happens.
+
+
+## License
+
+Source code is licensed under the MIT/Expat license.
+
+Chess pieces and board sprites are made by DANI MACCARI, and can be found [here](https://dani-maccari.itch.io/pixel-chess).
